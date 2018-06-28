@@ -28,7 +28,11 @@ layout: compress
                         <li class="wow fadeInLeft" data-wow-duration="1.5s">
                             <a class="zoombtn" href="{{ post.connpass }}">{{ post.eventdate }} {{ post.title }}</a>
                             <p>{{ post.excerpt | markdownfy }}</p>
-                            <a href="{{ post.connpass }}" class="btn zoombtn">イベントページを見る</a>
+                            {% if post.report %}
+                              <a href="{{ post.report }}" class="btn zoombtn">レポートを読む</a>
+                            {% else %}
+                              <a href="{{ post.connpass }}" class="btn zoombtn">イベントページを見る</a>
+                            {% endif %}
                         </li>
                     </ul>
                       {% endif %}
